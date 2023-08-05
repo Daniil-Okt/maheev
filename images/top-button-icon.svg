@@ -1,6 +1,6 @@
 <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="chevron-up">
-<rect width="33" height="33" fill="white"/>
+<rect width="33" height="33" fill="transparent"/>
 <path id="Vector" d="M29 23L16.5 10L4 23" stroke="#80DC28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </svg>
