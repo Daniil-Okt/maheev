@@ -1,0 +1,94 @@
+.rights {   
+    @include adaptiveClamp(padding-top, 85, 40);
+
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 56, 20);
+    }
+
+    &__row {
+        display: flex;
+        margin: 0 rem(-15);
+        @media(max-width:1035px){
+            flex-wrap: wrap;
+            row-gap: rem(20);
+        }
+    }
+
+    &__item {
+        flex: 0 1 33.333%;
+        @media(max-width:1035px){
+            flex: 0 1 50%;
+            &:last-child {
+                margin: 0 auto;
+            }
+        }
+        @media(max-width:695px){
+            flex: 0 1 100%;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &__button-row {
+        @include adaptiveClamp(margin-top, 111, 50);
+        margin: 0 auto;
+        max-width: rem(884);
+        @include adaptiveClamp(max-width, 884, 500);
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        @media(max-width:695px){
+            flex-direction: column;
+            row-gap: rem(20);
+            align-items: center;
+        }
+    }
+
+    &__button-participation {
+        @include adaptiveClamp(max-width, 386, 256);
+    }
+
+    &__button-rights {
+        @include adaptiveClamp(max-width, 426, 256);
+    }
+}
+.item-rights {
+    padding: 0 rem(15);
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        @include adaptiveClamp(width, 89, 59);
+        @include adaptiveClamp(margin-top, 25, 15);
+    }
+
+    &__title {
+        text-align: center;
+        @include adaptiveClamp(margin-top, 20, 10);
+        p {
+            color: $redColor;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        max-width: rem(320);
+        @include adaptiveClamp(font-size, 25, 15);
+        @media(max-width:470px){
+            max-width: rem(300);
+        }
+    }
+}
+.button {
+}
+.green {
+}

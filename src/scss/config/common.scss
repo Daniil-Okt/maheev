@@ -89,22 +89,16 @@ p {
 .button-round.red {
     border: 2px solid #DB261F;
     &:hover {
-        background-color: #fa433d;
+        background-color: #ffebeb;
     }
 }
 
 @keyframes animationButtonTop {
     25% {
         transform: translateY(2px);
-        @media(max-width:720px){
-            transform: translateY(1px);
-        }
     }
     50% {
         transform: translateY(-3px);
-        @media(max-width:720px){
-            transform: translateY(-2px);
-        }
     }
     100% {
         transform: translateY(0px);

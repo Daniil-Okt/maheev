@@ -22,7 +22,7 @@ import { MousePRLX } from './libs/parallaxMouse'
 
 import AOS from 'aos'
 
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML
  ! (i) необходимо для корректного отображения webp из css
@@ -98,3 +98,36 @@ if (menuLink.length > 0) {
     })
   });
 }
+
+
+const swiperHistory = new Swiper('.swiper-history', {
+  speed: 1000,
+  spaceBetween: 25,
+  slidesPerView: 1,
+  modules: [Navigation, Autoplay],
+  navigation: {
+    nextEl:'.history__slider-button-next',
+    prevEl: '.history__slider-button-prev',
+  },
+  autoplay: {
+    delay: 3000,
+    stopOnLastSlide: false,
+    disableOnIteration: false,
+  },
+  breakpoints: {
+    // 420: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 25,
+    //   slideToClickedSlide: true,
+    //   initialSlide: 1,
+    // },
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 25
+    },
+    1300: {
+      slidesPerView: 2,
+      spaceBetween: 64
+    }
+  }
+});
