@@ -123,6 +123,26 @@
     img {
         animation: animationButtonTop 2s ease-in-out 1s infinite;
     }
+    @media(max-width:720px){
+        right: rem(3);
+    }
+}
+.button-site {
+    position: fixed;
+    @include adaptiveClamp(top, 590, 380);
+    left: rem(15);
+    @include adaptiveClamp(width, 105, 41); 
+    @include adaptiveClamp(height, 105, 41);
+    &__text {
+        position: relative;
+        @include adaptiveClamp(top, 3, 1);
+        font-size: rem(15);
+        @include adaptiveClamp(font-size, 15, 6);
+        text-align: center;
+    }
+    @media(max-width:720px){
+        left: rem(3);
+    }
 }
 
 
