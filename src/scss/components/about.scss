@@ -1,10 +1,40 @@
 .about {
+    position: relative;
     padding-top: rem(6);
+    &__fon1 {
+        position: absolute;
+        display: block;
+        right: rem(-5);
+        top: rem(-20);
+        z-index: -1;
+        @include adaptiveClamp(width, 210, 100);
+    }
+    &__fon2 {
+        position: absolute;
+        display: block;
+        left: rem(-5);
+        top: rem(-113);
+        z-index: -1;
+        @include adaptiveClamp(width, 470, 200);
+        @media(max-width:1345px){
+            top: rem(-90);
+        }
+        @media(max-width:1170px){
+            top: rem(-50);
+        }
+        @media(max-width:920px){
+            top: rem(-160);
+        }
+        @media(max-width:500px){
+            display: none;
+        }
+    }
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
 
     &__header {
         @include adaptiveClamp(max-width, 561, 300);
@@ -44,7 +74,55 @@
         @include adaptiveClamp(max-width, 380, 250);
     }
 }
-.button {
+.text-about {
+    position: relative;
+    @include adaptiveClamp(padding-top, 93, 40);
+    &__container {
+        max-width: rem(920);
+    }
+
+    &__fon1 {
+        position: absolute;
+        display: block;
+        left: rem(-5);
+        top: rem(160);
+        z-index: -1;
+        @include adaptiveClamp(width, 260, 120);
+        @media(max-width:900px){
+            display: none;
+        }
+    }
+
+    &__fon2 {
+        position: absolute;
+        display: block;
+        right: rem(-5);
+        top: rem(200);
+        z-index: -1;
+        @include adaptiveClamp(width, 180, 100);
+        @media(max-width:700px){
+            display: none;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        text-align: center;
+        p {
+            @include adaptiveClamp(font-size, 35, 18);
+        }
+        p:not(:last-child) {
+            @include adaptiveClamp(margin-bottom, 25, 15);
+        }
+    }
 }
-.green {
+.button-top {
+    position: fixed;
+    bottom: rem(15);
+    right: rem(15);
+    img {
+        animation: animationButtonTop 2s ease-in-out 1s infinite;
+    }
 }
+
+

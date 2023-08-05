@@ -18,9 +18,9 @@ import BurgerMenu from './modules/BurgerMenu';
 
 // import Tabs from 'modules/Tabs';
 
-// import { MousePRLX } from './libs/parallaxMouse'
+import { MousePRLX } from './libs/parallaxMouse'
 
-// import AOS from 'aos'
+import AOS from 'aos'
 
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
@@ -42,10 +42,10 @@ new BurgerMenu().init();
  *  Библиотека для анимаций
  *  документация: https://michalsnik.github.io/aos
  */
-// AOS.init();
+AOS.init();
 
 /** Параллакс мышей */
-// const mousePrlx = new MousePRLX({});
+const mousePrlx = new MousePRLX({});
 
 /** Фиксированный header */
 // headerFixed();

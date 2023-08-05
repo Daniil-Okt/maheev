@@ -19,7 +19,7 @@ p {
     @include adaptiveClamp(font-size, 30, 18);
     line-height: 133.33%;
 }
-p.big {
+.big p {
     @include adaptiveClamp(font-size, 35, 23);
 
 }
@@ -72,6 +72,8 @@ p.big {
 
     @include adaptiveClamp(width, 81, 41);  
     @include adaptiveClamp(height, 81, 41);
+
+    background-color: $whiteColor;
     border: 2px solid #80DC28;
     border-radius: 50%;
 
@@ -81,7 +83,7 @@ p.big {
         @include adaptiveClamp(width, 33, 16);
     }
     &:hover {
-        background-color: #acff5f;
+        background-color: rgb(240, 247, 234)
     }
 }
 .button-round.red {
@@ -90,4 +92,22 @@ p.big {
         background-color: #fa433d;
     }
 }
+
+@keyframes animationButtonTop {
+    25% {
+        transform: translateY(2px);
+        @media(max-width:720px){
+            transform: translateY(1px);
+        }
+    }
+    50% {
+        transform: translateY(-3px);
+        @media(max-width:720px){
+            transform: translateY(-2px);
+        }
+    }
+    100% {
+        transform: translateY(0px);
+    } 
+}   
 
