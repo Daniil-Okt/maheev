@@ -1,0 +1,93 @@
+// Заголовки, общие БЄМ блоки и проче...
+body {
+    line-height: normal;
+}
+h1 {
+    @include adaptiveClamp(font-size, 83, 43);
+    font-family: Lobster;
+    line-height: normal;
+    span {
+        color: #FF0800;
+    }
+}
+h2 {
+    @include adaptiveClamp(font-size, 75, 35);
+    font-family: Lobster;
+    line-height: normal;
+}
+p {
+    @include adaptiveClamp(font-size, 30, 18);
+    line-height: 133.33%;
+}
+p.big {
+    @include adaptiveClamp(font-size, 35, 23);
+
+}
+*.bold {
+    font-weight: 500;
+}
+
+.button {
+    position: relative;
+    display: block;
+    max-width: rem(400);
+    top: 0;
+    width: 100%;
+    @include adaptiveClamp(padding, 29, 10);
+
+    border-radius: 100px;
+    border: 2px solid #80DC28;
+   
+
+    text-align: center;
+    font-weight: 500;
+    @include adaptiveClamp(font-size, 30, 18);
+    line-height: 133.33%;
+
+    cursor: pointer;    
+    transition: all 0.3s ease-in-out  0s;
+    &:hover {
+        top: rem(-2);
+        background-color: rgba(77, 158, 0, 0.63);
+        color: $whiteColor;
+    }
+    &:active {
+        transition: all 0.2s ease  0s;
+        top: 0;
+    }
+}
+.button.green {
+    background: linear-gradient(139deg, #71A143 0%, rgba(77, 158, 0, 0.63) 100%);
+    box-shadow: 6px 3px 7px 0px #80DC28 inset;
+    color: $whiteColor;
+    &:hover {
+        box-shadow: 3px 0px 4px 0px #80DC28 inset;
+        // opacity: 0.8;
+    }
+}
+.button-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include adaptiveClamp(width, 81, 41);  
+    @include adaptiveClamp(height, 81, 41);
+    border: 2px solid #80DC28;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: all 0.3s ease-in-out  0s;
+    img {
+        @include adaptiveClamp(width, 33, 16);
+    }
+    &:hover {
+        background-color: #acff5f;
+    }
+}
+.button-round.red {
+    border: 2px solid #DB261F;
+    &:hover {
+        background-color: #fa433d;
+    }
+}
+

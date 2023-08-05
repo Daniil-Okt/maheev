@@ -1,0 +1,50 @@
+.about {
+    padding-top: rem(6);
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header {
+        @include adaptiveClamp(max-width, 561, 300);
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 30, 15);
+    }
+
+    &__text {
+        @include adaptiveClamp(max-width, 1108, 800);
+        text-align: center;
+        @include adaptiveClamp(margin-bottom, 43, 20);
+    }
+
+    &__img {
+        max-width: rem(1062);
+        img {
+            width: 100%;
+        }
+    }
+
+    &__button-row {
+        max-width: rem(884);
+        @include adaptiveClamp(max-width, 884, 500);
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        @media(max-width:695px){
+            flex-direction: column;
+            row-gap: rem(20);
+            align-items: center;
+        }
+    }
+
+    &__button {
+        max-width: rem(380);
+        @include adaptiveClamp(max-width, 380, 250);
+    }
+}
+.button {
+}
+.green {
+}

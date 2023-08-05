@@ -1,0 +1,169 @@
+// =====================================================================================================================
+.header {
+  width: 100%;
+  @include adaptiveClamp(padding-top, 30, 15);
+  @include adaptiveClamp(padding-bottom, 30, 15);
+  
+  &.sticky {
+    // ..стили для липкого хедера
+  }
+
+  // .header__container
+  &__container {
+    position: relative;
+    z-index: 5;
+    // height: rem($headerHeight);
+    max-width: rem(1075);
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+  }
+
+  &__logo {
+    @include adaptiveClamp(max-width, 260, 180);
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__menu-open {
+    @media(max-width:920px){
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 4;
+        @include adaptiveClamp(padding-top, 110, 95);
+        padding-right: rem(40);
+        padding-left: rem(15);
+        padding-bottom: rem(15);
+        display: flex;
+        flex-direction: column;
+        gap: rem(15);
+        transition: all 0.3s ease  0s;
+
+        // background-color: $whiteColor;
+        border-bottom-left-radius: 20px;
+        
+        .menu-open & {
+          right: 0;
+          transition: all 0.5s ease  0s;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top:0;
+            left: 0;
+            backdrop-filter: blur(15px);
+            z-index: -1;
+            border-bottom-left-radius: 20px;
+        }
+    }
+  }
+  &__row-icon-menu {
+    @media(max-width:920px){
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        margin-right: rem(15);
+
+        display: flex;
+        align-items: center;
+    }
+  }
+}
+.menu {
+
+  &__list {
+    display: flex;
+    @include adaptiveClamp(gap, 74, 10);
+
+    @media(max-width:920px){
+        flex-direction: column;
+        @include adaptiveClamp(gap, 15, 15);
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-size: rem(18);
+  }
+}
+.logo {
+}
+
+// =====================================================================================================================
+
+// Burger
+
+.icon-menu {
+  display: none;
+
+  @include media(920) {
+    display: block;
+    position: relative;
+    background-color: transparent;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+    transform: rotate(0deg);
+    transition: all 0.3s ease  0s;
+    @media(max-width:600px){
+      width: rem(26);
+      height: rem(14);
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      border-radius: 15px;
+      width: 100%;
+      height: rem(2);
+      background-color: $redColor;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - rem(1));
+    }
+
+    .menu-open & {
+      transition: all 0.5s ease  0s;
+      transform: rotate(180deg);
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
