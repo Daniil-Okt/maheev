@@ -1,0 +1,67 @@
+.timer {
+    @include adaptiveClamp(padding-top, 86, 30);
+    &__container {
+        // max-width: rem(1099);
+        @include adaptiveClamp(max-width, 1089, 360);
+    }
+    &__body {
+        background-color: $redColor;
+        border-radius: 25px;
+
+        @include adaptiveClamp(padding-left, 53, 13);
+        @include adaptiveClamp(padding-right, 53, 13);
+        // @include adaptiveClamp(padding-top, 23, 13);
+        padding-top: rem(10);
+        @include adaptiveClamp(padding-bottom, 78, 28);
+    }
+
+    &__title {
+        text-align: center;
+        h2 {
+            color: $whiteColor;
+        }
+        @include adaptiveClamp(margin-bottom, 69, 29);
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+    }
+}
+.item-timer {
+    span {
+        color: $whiteColor;
+        font-weight: 500;
+    }
+    &__row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__digit {
+        @include adaptiveClamp(margin-bottom, 34, 14);
+        display: flex;
+        @include adaptiveClamp(gap, 22, 12);
+        span {
+            @include adaptiveClamp(font-size, 85, 30);
+            color: $blackColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include adaptiveClamp(width, 120, 35);
+            @include adaptiveClamp(height, 150, 50);
+
+            background-color: $whiteColor;
+
+            @include adaptiveClamp(border-radius, 25, 10);
+        }
+    }
+
+    &__label {
+        @include adaptiveClamp(font-size, 40, 20);
+    }
+}

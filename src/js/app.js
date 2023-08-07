@@ -168,3 +168,50 @@ const swiperProduct = new Swiper('.swiper-product', {
     }
   }
 });
+
+
+
+//================== таймер
+const targetDate = new Date('2023-09-10T24:00:00');
+function updateTimer() {
+    const now = new Date().getTime();
+    const timeRemaining = targetDate - now;
+
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+
+    // Функция для определения правильных окончаний слов
+    function getWordEnding(number, one, few, many) {
+        number = Math.abs(number);
+        const mod10 = number % 10;
+        const mod100 = number % 100;
+
+        if (mod10 === 1 && mod100 !== 11) {
+            return one;
+        } else if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) {
+            return few;
+        } else {
+            return many;
+        }
+    }
+
+    // Функция для форматирования чисел с лидирующим нулем
+    function formatWithLeadingZero(number) {
+        return number < 10 ? `0${number}` : number;
+    }
+
+    // Обновление текста в соответствии с числами и окончаниями слов
+    document.getElementById("days-tens").innerText = Math.floor(days / 10);
+    document.getElementById("days-ones").innerText = days % 10;
+    document.getElementById("days-label").innerText = getWordEnding(days, 'день', 'дня', 'дней');
+
+    document.getElementById("hours-tens").innerText = Math.floor(hours / 10);
+    document.getElementById("hours-ones").innerText = hours % 10;
+    document.getElementById("hours-label").innerText = getWordEnding(hours, 'час', 'часа', 'часов');
+
+    document.getElementById("minutes-tens").innerText = Math.floor(minutes / 10);
+    document.getElementById("minutes-ones").innerText = minutes % 10;
+    document.getElementById("minutes-label").innerText = getWordEnding(minutes, 'минута', 'минуты', 'минут');
+}
+const timerInterval = setInterval(updateTimer, 1000);
