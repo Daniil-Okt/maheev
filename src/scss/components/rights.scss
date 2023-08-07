@@ -120,8 +120,12 @@
     // align-items: center;
     justify-content: center;
     &__button-row {
+        position: sticky;
+        top: rem(-15);
+        padding-top: rem(15);
         display: flex;
-        justify-content: right;
+        justify-content: space-between;
+        background-color: $redColor;
     }
     &__button-close {
         cursor: pointer;
@@ -148,6 +152,7 @@
 
     }
     &__row {
+        position: relative;
         max-width: rem(1500);
         max-height: rem(1400);
         background-color: $redColor;
@@ -162,15 +167,13 @@
             background-color: rgb(191, 191, 191);;
           }
     }
-    &__row::-webkit-scrollbar {
-    }
     &__row::-webkit-scrollbar-track {
         background-color: $redColor;
         border-radius: 0px;
     }
 
     &__text {
-        margin-top: rem(-30);
+        margin-top: rem(-10);
     }
 }
 

@@ -1,5 +1,33 @@
 .prizes {
     @include adaptiveClamp(padding-top, 58, 20);
+    position: relative;
+    &__fon1 {
+        position: absolute;
+        display: block;
+        left: rem(-5);
+        bottom: rem(85);
+        z-index: -1;
+        @include adaptiveClamp(width, 274, 94);
+        @media(max-width:695px){
+            display: none;
+        }
+    }
+
+    &__fon2 {
+        position: absolute;
+        display: block;
+        right: rem(-5);
+        bottom: rem(75);
+        z-index: -1;
+        @include adaptiveClamp(width, 190, 70);
+        @media(max-width:1245px){
+            bottom: rem(170);
+        }
+        @media(max-width:695px){
+            display: none;
+        }
+
+    }
     &__container {
     }
 
@@ -163,7 +191,7 @@
         p {
             position: relative;
             left: 25%;
-            @include adaptiveClamp(width, 379, 279);
+            @include adaptiveClamp(width, 379, 189);
             @include adaptiveClamp(font-size, 35, 16);
         }
         @media(max-width:860px){
