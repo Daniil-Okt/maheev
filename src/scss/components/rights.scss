@@ -1,6 +1,32 @@
-.rights {   
+.rights { 
+    position: relative;  
     @include adaptiveClamp(padding-top, 85, 40);
+    &__fon1 {
+        position: absolute;
+        display: block;
+        left: rem(-5);
+        top: rem(230);
+        z-index: -1;
+        @include adaptiveClamp(width, 144, 70);
+        @media(max-width:1570px){
+            top: rem(50);
+        }
+        @media(max-width:695px){
+            top: rem(80);
+        }
+    }
 
+    &__fon2 {
+        position: absolute;
+        display: block;
+        right: rem(-5);
+        top: rem(396);
+        z-index: -1;
+        @include adaptiveClamp(width, 135, 65);
+        @media(max-width:700px){
+            top: rem(443);
+        }
+    }
     &__container {
     }
 
