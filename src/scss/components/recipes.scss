@@ -1,5 +1,6 @@
 .recipes {
     @include adaptiveClamp(padding-top, 85, 30);
+    @include adaptiveClamp(padding-bottom, 140, 60);
     &__container {
         display: flex;
         flex-direction: column;
