@@ -1,5 +1,17 @@
 .articles {
+    position: relative;
     @include adaptiveClamp(padding-top, 125, 40);
+    &__fon1 {
+        position: absolute;
+        display: block;
+        left: rem(-5);
+        top: rem(-90);
+        z-index: -1;
+        @include adaptiveClamp(width, 226, 86);
+        @media(max-width:500px){
+            top: rem(-50);
+        }
+    }
     &__container {
         max-width: rem(1323);
     }
