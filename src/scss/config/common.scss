@@ -2,6 +2,9 @@
 body {
     line-height: normal;
 }
+* {
+    -webkit-tap-highlight-color: transparent;
+  }
 h1 {
     @include adaptiveClamp(font-size, 83, 43);
     font-family: Lobster;

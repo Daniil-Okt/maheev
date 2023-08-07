@@ -59,7 +59,7 @@ const mousePrlx = new MousePRLX({});
  * На обертку(враппер) окна добавь класс _overlay-bg
  * На кнопку для закрытия окна добавь класс button-close
  */
-// togglePopupWindows();
+togglePopupWindows();
 
 // =======================================================================================================
 // const tabs = new Tabs('default-tabs', {});
@@ -101,7 +101,7 @@ if (menuLink.length > 0) {
 
 
 const swiperHistory = new Swiper('.swiper-history', {
-  speed: 1000,
+  speed: 800,
   spaceBetween: 25,
   slidesPerView: 1,
   modules: [Navigation, Autoplay],
@@ -128,6 +128,43 @@ const swiperHistory = new Swiper('.swiper-history', {
     1300: {
       slidesPerView: 2,
       spaceBetween: 64
+    }
+  }
+});
+const swiperProduct = new Swiper('.swiper-product', {
+  speed: 800,
+  spaceBetween: 15,
+  slidesPerView: 2,
+  modules: [Navigation, Autoplay],
+  navigation: {
+    nextEl:'.product__slider-button-next',
+    prevEl: '.product__slider-button-prev',
+  },
+  autoplay: {
+    delay: 3000,
+    stopOnLastSlide: false,
+    disableOnIteration: false,
+  },
+  // autoHeight: true,
+  breakpoints: {
+    // 420: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 25,
+    //   slideToClickedSlide: true,
+    //   initialSlide: 1,
+    // },
+    
+    800: {
+      slidesPerView: 3,
+      spaceBetween: 25
+    },
+    1100: {
+      slidesPerView: 4,
+      spaceBetween: 25
+    },
+    1300: {
+      slidesPerView: 4,
+      spaceBetween: 82,
     }
   }
 });

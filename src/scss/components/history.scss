@@ -50,9 +50,13 @@
     &__slider-button-next {
     }
 }
-
+.slider-button-prev {
+    img {
+        transform: rotate(180deg);
+    }
+}
 .slide-history {
-
+    
     &__img {
         img {
             width: 100%;
