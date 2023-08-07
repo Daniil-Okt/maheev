@@ -91,10 +91,12 @@ useDynamicAdapt()
 // скрытие меню
 const menuLink = document.querySelectorAll('.menu__item')
 const html = document.querySelector('html')
+const body = document.querySelector('body')
 if (menuLink.length > 0) {
   menuLink.forEach(item => {
     item.addEventListener('click', () => {
       html.classList.remove('menu-open')
+      body.classList.remove('lock')
     })
   });
 }

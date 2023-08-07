@@ -62,7 +62,7 @@
 
     &__text {
         text-align: center;
-        @include adaptiveClamp(margin-bottom, 48, 15);
+        @include adaptiveClamp(margin-bottom, 48, 20);
         p {
             @include adaptiveClamp(font-size, 30, 17);
         }
