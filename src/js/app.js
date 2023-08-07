@@ -112,7 +112,7 @@ const swiperHistory = new Swiper('.swiper-history', {
     prevEl: '.history__slider-button-prev',
   },
   autoplay: {
-    delay: 3000,
+    delay: 2000,
     stopOnLastSlide: false,
     disableOnIteration: false,
   },
@@ -140,22 +140,14 @@ const swiperProduct = new Swiper('.swiper-product', {
   modules: [Navigation, Autoplay],
   navigation: {
     nextEl:'.product__slider-button-next',
-    prevEl: '.product__slider-button-prev',
+    prevEl:'.product__slider-button-prev',
   },
   autoplay: {
-    delay: 3000,
+    delay: 2000,
     stopOnLastSlide: false,
     disableOnIteration: false,
   },
-  // autoHeight: true,
   breakpoints: {
-    // 420: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 25,
-    //   slideToClickedSlide: true,
-    //   initialSlide: 1,
-    // },
-    
     800: {
       slidesPerView: 3,
       spaceBetween: 25
