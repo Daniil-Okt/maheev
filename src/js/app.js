@@ -215,3 +215,19 @@ function updateTimer() {
     document.getElementById("minutes-label").innerText = getWordEnding(minutes, 'минута', 'минуты', 'минут');
 }
 const timerInterval = setInterval(updateTimer, 1000);
+
+
+
+// скрытие рецептов
+const recipesItem = document.querySelectorAll('.recipes__item')
+const recipesButton = document.querySelector('.recipes__button')
+
+if (recipesItem.length > 0) {
+  recipesButton.addEventListener('click', () => {
+    recipesItem.forEach(item => {
+      if (!item.classList.contains('open')) {
+        item.classList.contains('_is-open')?item.classList.remove('_is-open'):item.classList.add('_is-open')
+      }
+    });
+  })
+}
