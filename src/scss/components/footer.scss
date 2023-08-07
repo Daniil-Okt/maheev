@@ -1,15 +1,26 @@
 .footer {
-  padding: rem(20) 0;
-  background: $blackColor;
+  @include adaptiveClamp(padding-top, 32, 12);
+  @include adaptiveClamp(padding-bottom, 32, 12);
+
+  background: $whiteColor;
 
   // .footer__container
   &__container {
-    display: flex;
-    align-items: center;
+  }
 
-    @include media(510) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  &__row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    @include adaptiveClamp(width, 356, 206);
+    margin-bottom: rem(17);
+  }
+
+  &__rights {
+    font-size: rem(15);
   }
 }
+

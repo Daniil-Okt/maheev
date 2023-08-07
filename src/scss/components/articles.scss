@@ -55,9 +55,13 @@
             @include adaptiveClamp(font-size, 30, 17);
         }
     }
-
-    &__button {
+    &__button-row {
+        width: 100%;
         margin-top: auto;
+
+    }
+    &__button {
+        margin: 0 auto;
     }
 }
 .big {
