@@ -53,11 +53,14 @@
     height: auto;
     display: flex;
     align-items: center;
-    &__img {
+    img {
+        width: 100%;
+    }
+    // &__img {
         img {
             width: 100%;
         }
-    }
+    // }
 }
 .button-round {
 }

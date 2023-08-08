@@ -49,6 +49,8 @@
         @include adaptiveClamp(margin-bottom, 48, 15);
         img {
             width: 100%;
+            @include adaptiveClamp(height, 452.57, 281.79);
+            object-fit: cover;
         }
     }
 

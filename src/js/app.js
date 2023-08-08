@@ -102,66 +102,7 @@ if (menuLink.length > 0) {
 }
 
 
-const swiperHistory = new Swiper('.swiper-history', {
-  speed: 800,
-  spaceBetween: 25,
-  slidesPerView: 1,
-  modules: [Navigation, Autoplay],
-  navigation: {
-    nextEl:'.history__slider-button-next',
-    prevEl: '.history__slider-button-prev',
-  },
-  autoplay: {
-    delay: 2000,
-    stopOnLastSlide: false,
-    disableOnIteration: false,
-  },
-  breakpoints: {
-    // 420: {
-    //   slidesPerView: 3,
-    //   spaceBetween: 25,
-    //   slideToClickedSlide: true,
-    //   initialSlide: 1,
-    // },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 25
-    },
-    1300: {
-      slidesPerView: 2,
-      spaceBetween: 64
-    }
-  }
-});
-const swiperProduct = new Swiper('.swiper-product', {
-  speed: 800,
-  spaceBetween: 15,
-  slidesPerView: 2,
-  modules: [Navigation, Autoplay],
-  navigation: {
-    nextEl:'.product__slider-button-next',
-    prevEl:'.product__slider-button-prev',
-  },
-  autoplay: {
-    delay: 2000,
-    stopOnLastSlide: false,
-    disableOnIteration: false,
-  },
-  breakpoints: {
-    800: {
-      slidesPerView: 3,
-      spaceBetween: 25
-    },
-    1100: {
-      slidesPerView: 4,
-      spaceBetween: 25
-    },
-    1300: {
-      slidesPerView: 4,
-      spaceBetween: 82,
-    }
-  }
-});
+
 
 
 
@@ -215,13 +156,76 @@ const timerInterval = setInterval(updateTimer, 1000);
 // скрытие рецептов
 const recipesItem = document.querySelectorAll('.recipes__item')
 const recipesButton = document.querySelector('.recipes__button')
-
 if (recipesItem.length > 0) {
   recipesButton.addEventListener('click', () => {
     recipesItem.forEach(item => {
       if (!item.classList.contains('open')) {
-        item.classList.contains('_is-open')?item.classList.remove('_is-open'):item.classList.add('_is-open')
+        if (item.classList.contains('_is-open')) {
+          item.classList.remove('_is-open')
+          recipesButton.textContent = 'Показать еще'
+        } else {
+          item.classList.add('_is-open')
+          recipesButton.textContent = 'Cкрыть'
+        }
       }
     });
   })
 }
+
+
+
+const swiperProduct = new Swiper('.swiper-product', {
+  speed: 800,
+  spaceBetween: 15,
+  slidesPerView: 2,
+  modules: [Navigation, Autoplay],
+  navigation: {
+    nextEl:'.product__slider-button-next',
+    prevEl:'.product__slider-button-prev',
+  },
+  loop: true,
+  breakpoints: {
+    800: {
+      slidesPerView: 3,
+      spaceBetween: 25
+    },
+    1100: {
+      slidesPerView: 4,
+      spaceBetween: 25
+    },
+    1300: {
+      slidesPerView: 4,
+      spaceBetween: 82,
+    }
+  }
+});
+const buttonNextProduct = document.querySelector('.product__slider-button-next')
+setInterval(() => {
+  buttonNextProduct.click()
+}, 2300)
+const swiperHistory = new Swiper('.swiper-history', {
+  speed: 800,
+  spaceBetween: 25,
+  slidesPerView: 1,
+  modules: [Navigation, Autoplay],
+  navigation: {
+    nextEl:'.history__slider-button-next',
+    prevEl: '.history__slider-button-prev',
+  },
+  autoplay: {
+    delay: 2000,
+    stopOnLastSlide: false,
+    disableOnIteration: false,
+  },
+  loop: true,
+  breakpoints: {
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 25
+    },
+    1300: {
+      slidesPerView: 2,
+      spaceBetween: 64
+    }
+  }
+});
