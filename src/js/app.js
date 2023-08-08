@@ -229,3 +229,8 @@ const swiperHistory = new Swiper('.swiper-history', {
     }
   }
 });
+
+
+
+// const iframeBotVideo = document.querySelector('.iframe-bot-video')
+// iframeBotVideo.style.height = (parseFloat(iframeBotVideo.style.height) - 245) + 'px';

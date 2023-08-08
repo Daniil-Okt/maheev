@@ -1,0 +1,98 @@
+.video {
+    position: relative;
+    @include adaptiveClamp(padding-top, 74, 30);
+    &__fon1 {
+        position: absolute;
+        display: block;
+        left: rem(-5);
+        top: rem(579);
+        z-index: -1;
+        @include adaptiveClamp(width, 211, 81);
+        @media(max-width:1055px){
+            display: none;
+        }
+        @media(max-width:890px){
+            display: block;
+            top: rem(750);
+        }
+        @media(max-width:625px){
+            top: rem(850);
+        }
+    }
+    &__fon2 {
+        position: absolute; 
+        display: block;
+        right: rem(-5);
+        top: rem(0);
+        z-index: -1;
+        @include adaptiveClamp(width, 244, 104);
+        // @media(max-width:700px){
+        //     display: none;
+        // }
+    }
+
+    &__container {
+        max-width: rem(991);
+    }
+
+    &__title {
+        text-align: center;
+        @include adaptiveClamp(padding-bottom, 73, 20);
+    }
+
+    &__row {
+        @include adaptiveClamp(margin-bottom, 100, 40); 
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr;
+        // @include adaptiveClamp(gap, 83, 23);
+        // gap: rem(83);
+        display: flex;
+        justify-content: space-between;
+        @media(max-width:890px){
+            flex-wrap: wrap;
+            row-gap: rem(50);
+            @include adaptiveClamp(row-gap, 50, 20);
+        }
+    }
+
+    &__item {
+        
+        iframe {
+            width: rem(265);
+            height: rem(472);
+            object-fit: cover;
+        }
+        @media(max-width:890px){
+            display: flex;
+            justify-content: center;
+            flex: 0 1 50%;
+            &:last-child {
+                flex: 0 1 100%;
+            }
+        }
+        @media(max-width:625px){
+            display: flex;
+            justify-content: center;
+            flex: 0 1 100%;
+            &:last-child {
+                flex: 0 1 100%;
+            }
+        }
+    }
+
+    &__bot-video {
+        iframe {
+            width: 100%;
+            height: rem(541);
+            @media(max-width:1000px){
+                @include adaptiveClamp(height, 800, 187);
+            }
+        }
+    }
+}
+.row-video {
+}
+.item-video {
+}
+.bot-video {
+}
