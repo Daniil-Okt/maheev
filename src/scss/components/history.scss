@@ -76,7 +76,7 @@
         // display: none;
         
         font-size: rem(16);
-        @include adaptiveClamp(font-size, 16, 8);
+        @include adaptiveClamp(font-size, 18, 8);
         
         @media(min-width:300px){
             position: absolute;

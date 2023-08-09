@@ -217,7 +217,7 @@ const swiperHistory = new Swiper('.swiper-history', {
     stopOnLastSlide: false,
     disableOnIteration: false,
   },
-  loop: true,
+  // loop: true,
   breakpoints: {
     800: {
       slidesPerView: 2,
