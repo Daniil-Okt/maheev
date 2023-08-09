@@ -56,15 +56,40 @@
     }
 }
 .slide-history {
-    
+    position: relative;
+    height: auto;
     &__img {
+        width: 100%;
+        @media(min-width:300px){
+            height: 100%;
+        }
         img {
             width: 100%;
-            border-radius: 25px;
+            height: 100%;
+            object-fit: cover;
+            @include adaptiveClamp(border-radius, 25, 15);
         }
+        margin-bottom: rem(15);
     }
 
     &__text {
+        // display: none;
+        
+        font-size: rem(16);
+        @include adaptiveClamp(font-size, 16, 8);
+        
+        @media(min-width:300px){
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: $whiteColor;
+            background-color: #111111b9;
+            @include adaptiveClamp(border-bottom-right-radius, 25, 15);
+            @include adaptiveClamp(border-bottom-left-radius, 25, 15);
+            padding: rem(10) rem(15) rem(15) rem(15);
+            @include adaptiveClamp(padding, 15, 8);
+            width: 100%;
+        }
     }
 }
 .swiper-slide {

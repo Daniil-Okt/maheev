@@ -56,17 +56,17 @@
     }
 
     &__item {
-        
         iframe {
             width: rem(265);
             height: rem(472);
             object-fit: cover;
+            
         }
         @media(max-width:890px){
             display: flex;
             justify-content: center;
             flex: 0 1 50%;
-            &:last-child {
+            &:nth-child(3) {
                 flex: 0 1 100%;
             }
         }
@@ -74,8 +74,12 @@
             display: flex;
             justify-content: center;
             flex: 0 1 100%;
-            &:last-child {
+            &:nth-child(3) {
                 flex: 0 1 100%;
+            }
+            iframe {
+                width: rem(325);
+                height: rem(578);
             }
         }
     }

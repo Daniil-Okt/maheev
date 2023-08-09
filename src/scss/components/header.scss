@@ -97,6 +97,10 @@
 
   &__link {
     font-size: rem(18);
+    transition: all 0.3s ease  0s;
+    &:hover {
+      color: $redColor;
+    }
   }
 }
 .logo {

@@ -1,4 +1,5 @@
 .articles {
+    display: none;
     position: relative;
     @include adaptiveClamp(padding-top, 125, 40);
     &__fon1 {
